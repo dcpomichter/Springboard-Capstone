@@ -7,3 +7,10 @@ Idea 1- A site where you can register and track what Tabletop and Board games yo
 Idea 2- A site for game ratings. Submit your ratings on board/video games you have played and view other ratings on those games. The site would also compile a list of potential matches for games you may like based on your ratings of other games.
 
 Idea 3- A site for finding and comparing game prices at multiple retailers. A way to find good games cheap.
+
+
+Possible APIs:
+https://www.boardgameatlas.com/api/docs
+https://tabletop.events/developer/Library.html
+https://github.com/public-apis/public-apis?tab=readme-ov-file#games--comics
+https://publicapi.dev/board-game-geek-api
