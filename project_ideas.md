@@ -10,7 +10,7 @@ Idea 3- A site for finding and comparing game prices at multiple retailers. A wa
 
 
 Possible APIs:
-https://www.boardgameatlas.com/api/docs
+[Permanently Closed](https://www.boardgameatlas.com/api/docs)
 https://tabletop.events/developer/Library.html
 https://github.com/public-apis/public-apis?tab=readme-ov-file#games--comics
 https://publicapi.dev/board-game-geek-api
