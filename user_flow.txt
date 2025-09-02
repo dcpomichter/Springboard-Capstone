@@ -1,0 +1,13 @@
+This is a text version of the User Flow chart. It will be a 'stream of consciousness' style document to follow the flow which will later be put into the visual medium.
+
+To start users will enter a landing page. This landing page will display top publicly rated games, possibly articles or reviews of gameplay featured, It will also have a Login/register button.
+
+Selecting any option on the page, will check if the user is Logged in. If not it will check the security settings of the page? if the content requires a user be logged in it will redirect to the Login page. otherwise it will proceed to the requested page.
+
+On the Login page the user can login, or if they do not have a Login, they can Register a new account. If the user is Registering a new account it will take them through a number of registration pages to gather both user personal data and begin their collection of registered games. Once logged in the system will check for the previous page, if the previous page was an article, or specific game review it will re-route to that page with the user logged in, otherwise it will default to the users Profile page.
+
+From the profile page the user will be able to navigate to Articles, Reviews, or their own Library of Games.
+
+From an article the user will be able to comment
+From a review the user will be able to comment, or post their own review.
+From the Library of Games a user can add new games to their library, review any game in their library, update their personal information related to a game, including previous ratings, the games played status (played/not played), and so on.
