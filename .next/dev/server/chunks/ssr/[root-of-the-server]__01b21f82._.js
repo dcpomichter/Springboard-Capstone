@@ -136,12 +136,10 @@ function CreateGamePage() {
             setLoading(true);
             console.log(game);
             const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].post("/api/games/create", game);
-            console.log("Game Created", response.data);
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success("Game Created");
             router.push("/games");
         } catch (error) {
-            console.log("Creation Failed", error.error);
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error(error.error);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error("Creation Failed" + error.message);
         } finally{
             setLoading(false);
         }
@@ -162,12 +160,12 @@ function CreateGamePage() {
                 children: loading ? "Procesing..." : "Create a New Game"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 49,
+                lineNumber: 47,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 50,
+                lineNumber: 48,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -175,7 +173,7 @@ function CreateGamePage() {
                 children: "Title"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 51,
+                lineNumber: 49,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -190,7 +188,7 @@ function CreateGamePage() {
                 placeholder: "Title*"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 52,
+                lineNumber: 50,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -198,7 +196,7 @@ function CreateGamePage() {
                 children: "Category"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 60,
+                lineNumber: 58,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -213,7 +211,7 @@ function CreateGamePage() {
                 placeholder: "Category*"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 61,
+                lineNumber: 59,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -221,7 +219,7 @@ function CreateGamePage() {
                 children: "Number of Players"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 69,
+                lineNumber: 67,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -236,7 +234,7 @@ function CreateGamePage() {
                 placeholder: "Number of Players*"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 70,
+                lineNumber: 68,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -244,7 +242,7 @@ function CreateGamePage() {
                 children: "Gameplay Time"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 78,
+                lineNumber: 76,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -259,7 +257,7 @@ function CreateGamePage() {
                 placeholder: "Gameplay Time*"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 79,
+                lineNumber: 77,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -267,7 +265,7 @@ function CreateGamePage() {
                 children: "Publisher"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 87,
+                lineNumber: 85,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -282,7 +280,7 @@ function CreateGamePage() {
                 placeholder: "Publisher"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 88,
+                lineNumber: 86,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -291,13 +289,13 @@ function CreateGamePage() {
                 children: buttonDisabled ? "Cannot Create" : "Create Game"
             }, void 0, false, {
                 fileName: "[project]/src/app/games/creategame/page.tsx",
-                lineNumber: 96,
+                lineNumber: 94,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/games/creategame/page.tsx",
-        lineNumber: 48,
+        lineNumber: 46,
         columnNumber: 9
     }, this);
 }

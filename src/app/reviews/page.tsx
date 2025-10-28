@@ -32,7 +32,7 @@ export default function ReviewsPage() {
                 <h2>{loading ? "Loading Reviews..." : ""}</h2>
                 {<div className="Reviews">
                     {data.map(review => (
-                        <Link href={`/review/${review._id.toString()}`} key={review._id} className="review">
+                        <Link href={`/reviews/${review._id.toString()}`} key={review._id} className="review">
                             <p>{review.title}</p>
                             <p>Rating: {review.rating} /5</p>
                         </Link>

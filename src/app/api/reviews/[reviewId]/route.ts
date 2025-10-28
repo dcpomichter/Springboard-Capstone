@@ -23,17 +23,13 @@ export async function POST(request: NextRequest) {
         const user = await User.findById(review.reviewer)
         const game = await Game.findById(review.game)
 
-        if (user) {
-            review.reviewer = user.username
-        }
+        review._doc.reviewer = user.username
+        review._doc.game = game.title
 
-        if (game) {
-            review.game = game.title
-        }
 
         return NextResponse.json({
             message: "Review Found",
-            review
+            review: review._doc
         })
     }
     catch (error: any) {

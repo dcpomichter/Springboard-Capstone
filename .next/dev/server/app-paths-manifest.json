@@ -1,12 +1,12 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
+  "/api/games/create/route": "app/api/games/create/route.js",
   "/api/games/route": "app/api/games/route.js",
+  "/api/reviews/[reviewId]/route": "app/api/reviews/[reviewId]/route.js",
   "/api/reviews/create/route": "app/api/reviews/create/route.js",
   "/api/reviews/route": "app/api/reviews/route.js",
-  "/api/users/me/route": "app/api/users/me/route.js",
+  "/games/creategame/page": "app/games/creategame/page.js",
   "/games/page": "app/games/page.js",
-  "/page": "app/page.js",
-  "/profile/[id]/page": "app/profile/[id]/page.js",
+  "/reviews/[reviewId]/page": "app/reviews/[reviewId]/page.js",
   "/reviews/newreview/page": "app/reviews/newreview/page.js",
   "/reviews/page": "app/reviews/page.js"
 }

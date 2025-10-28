@@ -14,7 +14,7 @@ export default function ReviewDetailsPage({ params }: any) {
     const getReviewDetails = async () => {
         try {
             setLoading(true)
-            const response = await axios.post(`/api/reviewa/${reviewId}`, { reviewId })
+            const response = await axios.post(`/api/reviews/${reviewId}`, { reviewId })
             setData(response.data.review)
             toast.success("Review Found")
         }

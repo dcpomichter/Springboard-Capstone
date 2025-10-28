@@ -1,6 +1,7 @@
 import { connect } from "@/dbConfig/dbConfig";
 import Review from "@/models/reviewModel";
 import Game from "@/models/gameModel";
+import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import { getDataFromToken } from "@/helpers/getDataFromToken";
 import { toast } from "react-hot-toast";
@@ -20,6 +21,7 @@ export async function POST(request: NextRequest) {
         } = reqBody
 
         const userId = getDataFromToken(request)
+        const user = await User.findById(userId)
 
         reviewer = userId
 
@@ -45,6 +47,10 @@ export async function POST(request: NextRequest) {
         const savedReview = await newReview.save()
 
         gameDetails.reviews.push(savedReview._id)
+        await gameDetails.save()
+        user.reviews.push(savedReview._id)
+        await user.save()
+
         await gameDetails.save()
 
         return NextResponse.json({

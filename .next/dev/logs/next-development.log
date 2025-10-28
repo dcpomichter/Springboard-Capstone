@@ -1,4 +1,14 @@
-[00:00:14.701] Server  LOG      ✓ Ready in 10s
-[00:00:57.204] Server  LOG      ○ Compiling /profile/[id] ...
-[00:03:35.299] Server  LOG     MongoDB Connected successfully
-[00:03:55.706] Server  LOG      ○ Compiling / ...
+[00:00:02.854] Server  LOG      ✓ Ready in 2.2s
+[00:00:07.805] Server  LOG      ○ Compiling /reviews ...
+[00:00:14.519] Server  LOG     MongoDB Connected successfully
+[00:01:22.400] Server  LOG     {}
+[00:01:57.460] Server  LOG     {}
+[00:02:05.195] Server  LOG     68fff64e5302f93db5843c06
+[00:02:26.738] Server  LOG     {}
+[00:11:33.594] Browser LOG     {"category":"TCG","gameplayTime":30,"numberOfPlayers":2,"owner":[],"publisher":"Cryptozoic Entertainment","title":"Adventure Time: Flux"}
+[00:11:33.932] Server  LOG     {}
+[00:12:39.102] Browser ERROR   Received NaN for the `%s` attribute. If this is expected, cast the value to a string. value
+[00:12:49.054] Server  ERROR   (node:129280) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 connected listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:12:49.054] Server  ERROR   (node:129280) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+[00:12:49.060] Browser LOG     {"category":"TCG","gameplayTime":30,"numberOfPlayers":2,"owner":[],"publisher":"Cryptozoic Entertainment","title":"Adventure Time: Flux"}

@@ -11,7 +11,7 @@ connect()
 export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json()
-        const {
+        let {
             title,
             category,
             numberOfPlayers,
@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
         } = reqBody
 
         const userId = getDataFromToken(request)
+        const user = await User.findById(userId)
 
         owner.push(userId)
 
@@ -42,8 +43,8 @@ export async function POST(request: NextRequest) {
         })
 
         const savedGame = await newGame.save()
-
-        console.log(savedGame)
+        user.library.push(savedGame._id)
+        await user.save()
 
         return NextResponse.json({
             message: "Game created successfully",
