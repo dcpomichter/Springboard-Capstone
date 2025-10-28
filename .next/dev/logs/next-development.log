@@ -1,14 +1,116 @@
-[00:00:02.854] Server  LOG      ✓ Ready in 2.2s
-[00:00:07.805] Server  LOG      ○ Compiling /reviews ...
-[00:00:14.519] Server  LOG     MongoDB Connected successfully
-[00:01:22.400] Server  LOG     {}
-[00:01:57.460] Server  LOG     {}
-[00:02:05.195] Server  LOG     68fff64e5302f93db5843c06
-[00:02:26.738] Server  LOG     {}
-[00:11:33.594] Browser LOG     {"category":"TCG","gameplayTime":30,"numberOfPlayers":2,"owner":[],"publisher":"Cryptozoic Entertainment","title":"Adventure Time: Flux"}
-[00:11:33.932] Server  LOG     {}
-[00:12:39.102] Browser ERROR   Received NaN for the `%s` attribute. If this is expected, cast the value to a string. value
-[00:12:49.054] Server  ERROR   (node:129280) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 connected listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+[00:00:02.948] Server  LOG      ✓ Ready in 2.3s
+[00:00:30.535] Server  LOG      ○ Compiling /games/creategame ...
+[00:01:26.275] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:01:28.727] Server  LOG     MongoDB Connected successfully
+[00:04:24.530] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:04:24.590] Server  LOG     {}
+[00:05:42.692] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:05:42.960] Server  LOG     {}
+[00:06:33.845] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:06:53.386] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:07:26.531] Browser LOG     {"category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owner":[],"publisher":"Looney Labs","title":"Adventure Time: Flux"}
+[00:07:26.622] Server  LOG     {}
+[00:08:04.989] Server  LOG      ✓ Compiled in 76ms
+[00:10:33.913] Server  LOG      ✓ Compiled in 498ms
+[00:12:26.486] Browser ERROR   Received NaN for the `%s` attribute. If this is expected, cast the value to a string. value
+[00:16:48.347] Server  ERROR   (node:54136) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 connected listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
 (Use `node --trace-warnings ...` to show where the warning was created)
-[00:12:49.054] Server  ERROR   (node:129280) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
-[00:12:49.060] Browser LOG     {"category":"TCG","gameplayTime":30,"numberOfPlayers":2,"owner":[],"publisher":"Cryptozoic Entertainment","title":"Adventure Time: Flux"}
+[00:16:48.348] Server  ERROR   (node:54136) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [NativeConnection]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+[00:27:39.670] Server  LOG      ✓ Compiled in 633ms
+[00:27:40.562] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'toString')
+[00:27:48.788] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:49.363] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[00:27:49.402] Server  LOG      ✓ Compiled in 85ms
+[00:27:51.548] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[00:28:23.584] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:23.610] Server  LOG      ✓ Compiled in 68ms
+[00:28:23.971] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[00:28:25.553] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[00:28:34.118] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:28:34.141] Server  LOG      ✓ Compiled in 74ms
+[00:28:36.542] Browser ERROR   unhandledRejection: ReferenceError: user is not defined
+[00:29:11.920] Server  LOG      ✓ Compiled in 62ms
+[00:29:23.499] Browser LOG     
+[00:30:48.445] Server  LOG     {}
+[00:30:48.557] Server  LOG     [{...},{...}]
+[00:30:48.672] Browser LOG     
+[00:33:50.705] Server  LOG      ✓ Compiled in 68ms
+[00:34:05.313] Browser LOG     {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","isAdmin":"init","isVerified":"init","library":"init","password":"require","reviews":"init","username":"init","verifyToken":"init","verifyTokenExpiry":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"isAdmin":true,"isVerified":true,"library":true,"reviews":true,"username":true,"verifyToken":true,"verifyTokenExpiry":true},"require":{"password":true}}},"exclude":true,"selected":{"password":0},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"68fff64e5302f93db5843c06","email":"test2@test.com","isAdmin":false,"isVerified":false,"library":["69000abb9f2f59f9da556147","690039b07afca4f6125b7eab"],"reviews":["690031794379f64a7d7ec3c7"],"username":"test2","verifyToken":"$2b$10$iZoHiLigdanH28lSDGb8Zeo5WC5Yqo5utJdKQdEOpVM70OceBSzIC","verifyTokenExpiry":"2025-10-27T23:46:39.111Z"},"library":[{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]}
+[00:34:54.566] Server  LOG      ✓ Compiled in 69ms
+[00:36:44.829] Server  LOG      ✓ Compiled in 75ms
+[00:37:26.167] Server  LOG      ✓ Compiled in 132ms
+[00:37:29.708] Browser LOG     
+[00:37:47.952] Server  LOG      ✓ Compiled in 105ms
+[00:38:24.669] Server  LOG      ✓ Compiled in 84ms
+[00:38:24.749] Browser LOG     {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","isAdmin":"init","isVerified":"init","library":"init","password":"require","reviews":"init","username":"init","verifyToken":"init","verifyTokenExpiry":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"isAdmin":true,"isVerified":true,"library":true,"reviews":true,"username":true,"verifyToken":true,"verifyTokenExpiry":true},"require":{"password":true}}},"exclude":true,"selected":{"password":0},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"68fff64e5302f93db5843c06","email":"test2@test.com","isAdmin":false,"isVerified":false,"library":["69000abb9f2f59f9da556147","690039b07afca4f6125b7eab"],"reviews":["690031794379f64a7d7ec3c7"],"username":"test2","verifyToken":"$2b$10$iZoHiLigdanH28lSDGb8Zeo5WC5Yqo5utJdKQdEOpVM70OceBSzIC","verifyTokenExpiry":"2025-10-27T23:46:39.111Z"},"library":[{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]}
+[00:38:24.749] Browser LOG     [2;38;2;124;124;124m%s[0m {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","isAdmin":"init","isVerified":"init","library":"init","password":"require","reviews":"init","username":"init","verifyToken":"init","verifyTokenExpiry":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"isAdmin":true,"isVerified":true,"library":true,"reviews":true,"username":true,"verifyToken":true,"verifyTokenExpiry":true},"require":{"password":true}}},"exclude":true,"selected":{"password":0},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"68fff64e5302f93db5843c06","email":"test2@test.com","isAdmin":false,"isVerified":false,"library":["69000abb9f2f59f9da556147","690039b07afca4f6125b7eab"],"reviews":["690031794379f64a7d7ec3c7"],"username":"test2","verifyToken":"$2b$10$iZoHiLigdanH28lSDGb8Zeo5WC5Yqo5utJdKQdEOpVM70OceBSzIC","verifyTokenExpiry":"2025-10-27T23:46:39.111Z"},"library":[{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]}
+[00:38:36.830] Server  LOG     
+[00:38:37.874] Browser LOG     
+[00:38:37.874] Browser LOG     [2;38;2;124;124;124m%s[0m 
+[00:38:38.179] Browser LOG     {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","isAdmin":"init","isVerified":"init","library":"init","password":"require","reviews":"init","username":"init","verifyToken":"init","verifyTokenExpiry":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"isAdmin":true,"isVerified":true,"library":true,"reviews":true,"username":true,"verifyToken":true,"verifyTokenExpiry":true},"require":{"password":true}}},"exclude":true,"selected":{"password":0},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"68fff64e5302f93db5843c06","email":"test2@test.com","isAdmin":false,"isVerified":false,"library":["69000abb9f2f59f9da556147","690039b07afca4f6125b7eab"],"reviews":["690031794379f64a7d7ec3c7"],"username":"test2","verifyToken":"$2b$10$iZoHiLigdanH28lSDGb8Zeo5WC5Yqo5utJdKQdEOpVM70OceBSzIC","verifyTokenExpiry":"2025-10-27T23:46:39.111Z"},"library":[{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]}
+[00:38:38.179] Browser LOG     [2;38;2;124;124;124m%s[0m {"$__":{"activePaths":{"paths":{"__v":"init","_id":"init","email":"init","isAdmin":"init","isVerified":"init","library":"init","password":"require","reviews":"init","username":"init","verifyToken":"init","verifyTokenExpiry":"init"},"states":{"default":{},"init":{"__v":true,"_id":true,"email":true,"isAdmin":true,"isVerified":true,"library":true,"reviews":true,"username":true,"verifyToken":true,"verifyTokenExpiry":true},"require":{"password":true}}},"exclude":true,"selected":{"password":0},"skipId":true},"$isNew":false,"_doc":{"__v":3,"_id":"68fff64e5302f93db5843c06","email":"test2@test.com","isAdmin":false,"isVerified":false,"library":["69000abb9f2f59f9da556147","690039b07afca4f6125b7eab"],"reviews":["690031794379f64a7d7ec3c7"],"username":"test2","verifyToken":"$2b$10$iZoHiLigdanH28lSDGb8Zeo5WC5Yqo5utJdKQdEOpVM70OceBSzIC","verifyTokenExpiry":"2025-10-27T23:46:39.111Z"},"library":[{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]}
+[00:39:05.461] Server  LOG      ✓ Compiled in 68ms
+[00:39:05.539] Browser LOG     [{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]
+[00:39:05.539] Browser LOG     [2;38;2;124;124;124m%s[0m [{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]
+[00:39:18.946] Server  LOG      ✓ Compiled in 63ms
+[00:39:19.025] Browser LOG     [{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]
+[00:39:19.025] Browser LOG     [2;38;2;124;124;124m%s[0m [{"__v":4,"_id":"69000abb9f2f59f9da556147","category":"Card Game","gameplayTime":30,"numberOfPlayers":6,"owners":["68fff64e5302f93db5843c06","68fff64e5302f93db5843c06"],"publisher":"Looney Labs","reviews":["690031794379f64a7d7ec3c7"],"title":"Adventure Time: Flux"},{"__v":0,"_id":"690039b07afca4f6125b7eab","category":"Board game","gameplayTime":60,"numberOfPlayers":5,"owners":["68fff64e5302f93db5843c06"],"publisher":"Fake producer","reviews":[],"title":"Test"}]
+[00:40:00.144] Server  LOG      ✓ Compiled in 66ms
+[00:40:16.785] Server  LOG      ✓ Compiled in 108ms
+[00:41:01.323] Server  LOG      ✓ Compiled in 82ms
+[00:41:24.947] Server  LOG      ✓ Compiled in 69ms
+[00:42:10.453] Server  LOG      ✓ Compiled in 231ms
+[00:48:26.450] Server  LOG      ✓ Compiled in 68ms
+[00:48:38.344] Server  LOG      ✓ Compiled in 168ms
+[00:48:38.458] Browser ERROR   ./src/app/profile/[id]/page.tsx:60:31
+Parsing ecmascript source code failed
+  58 |                     <div className="games">
+  59 |                         <h3>Reviewa</h3>
+> 60 |                         {data.._doc.reviews.map(game => (
+     |                               ^
+  61 |                             <Link href={`/games/${game._id.toString()}`} key={game._id} className="game">
+  62 |                                 <p>{game.title}</p>
+  63 |                                 <p>Category: {game.category}</p>
+
+Expected '</', got '.'
+
+Import traces:
+  Client Component Browser:
+    ./src/app/profile/[id]/page.tsx [Client Component Browser]
+    ./src/app/profile/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/profile/[id]/page.tsx [Client Component SSR]
+    ./src/app/profile/[id]/page.tsx [Server Component]
+[00:48:41.133] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'toString')
+[00:50:38.339] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:50:38.367] Server  LOG      ✓ Compiled in 68ms
+[00:50:38.824] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:50:38.859] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:50:40.368] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:50:51.596] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:50:51.611] Server  LOG      ✓ Compiled in 63ms
+[00:50:52.036] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:50:53.151] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:51:03.887] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:51:03.903] Server  LOG      ✓ Compiled in 75ms
+[00:51:04.677] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:51:06.796] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:52:00.796] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:00.827] Server  LOG      ✓ Compiled in 996ms
+[00:52:01.263] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:52:02.292] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:52:42.225] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:42.250] Server  LOG      ✓ Compiled in 87ms
+[00:52:42.710] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:52:43.969] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:53:25.053] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:25.070] Server  LOG      ✓ Compiled in 103ms
+[00:53:25.566] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:53:26.739] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:53:29.663] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'username')
+[00:53:30.757] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
+[00:53:51.594] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:51.617] Server  LOG      ✓ Compiled in 104ms
+[00:53:52.052] Server  ERROR    ⨯ TypeError: Cannot read properties of undefined (reading 'map')
+[00:53:53.176] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')

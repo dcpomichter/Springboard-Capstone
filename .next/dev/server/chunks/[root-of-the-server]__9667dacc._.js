@@ -256,17 +256,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$helpers$2f$getDataFro
 async function POST(request) {
     try {
         const reqBody = await request.json();
-        let { title, category, numberOfPlayers, gameplayTime, publisher, owner } = reqBody;
+        let { title, category, numberOfPlayers, gameplayTime, publisher, owners } = reqBody;
         const userId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$helpers$2f$getDataFromToken$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getDataFromToken"])(request);
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$userModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findById(userId);
-        owner.push(userId);
+        owners.push(userId);
         //verify if game exists
-        const game = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$gameModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
+        let game = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$gameModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             title
         });
         if (game) {
-            game.owner.push(userId);
+            game.owners.push(userId);
             await game.save();
+            user.library.push(game._id);
+            await user.save();
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Game already exists, Added Owner"
             }, {
@@ -279,7 +281,7 @@ async function POST(request) {
             numberOfPlayers,
             gameplayTime,
             publisher,
-            owner
+            owners
         });
         const savedGame = await newGame.save();
         user.library.push(savedGame._id);

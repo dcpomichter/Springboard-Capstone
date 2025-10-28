@@ -12,7 +12,7 @@ export default function CreateGamePage() {
         numberOfPlayers: 0,
         gameplayTime: 0,
         publisher: "",
-        owner: []
+        owners: []
     })
 
 
@@ -22,7 +22,6 @@ export default function CreateGamePage() {
     const createGame = async () => {
         try {
             setLoading(true)
-            console.log(game)
             const response = await axios.post("/api/games/create", game);
             toast.success("Game Created")
             router.push("/games")

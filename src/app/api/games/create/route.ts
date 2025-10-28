@@ -17,19 +17,21 @@ export async function POST(request: NextRequest) {
             numberOfPlayers,
             gameplayTime,
             publisher,
-            owner
+            owners
         } = reqBody
 
         const userId = getDataFromToken(request)
         const user = await User.findById(userId)
 
-        owner.push(userId)
+        owners.push(userId)
 
         //verify if game exists
-        const game = await Game.findOne({ title })
+        let game = await Game.findOne({ title })
         if (game) {
-            game.owner.push(userId)
+            game.owners.push(userId)
             await game.save();
+            user.library.push(game._id)
+            await user.save()
             return NextResponse.json({ error: "Game already exists, Added Owner" }, { status: 400 })
         }
 
@@ -39,7 +41,7 @@ export async function POST(request: NextRequest) {
             numberOfPlayers,
             gameplayTime,
             publisher,
-            owner
+            owners
         })
 
         const savedGame = await newGame.save()
