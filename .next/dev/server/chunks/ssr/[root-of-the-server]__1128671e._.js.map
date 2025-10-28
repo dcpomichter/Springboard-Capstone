@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/Kim%20and%20Dyl/Dylan/Coding/Notes/NextJs/my-app/src/app/profile/page.tsx"],"sourcesContent":["export default function ProfilePage() {\r\n    return (\r\n        <div className=\"flex flex-col items-center justify-center min-h-screen py-2\">\r\n            <button className=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center items-right mb-4\">Logout</button>\r\n            <h1>Profile</h1>\r\n            <hr />\r\n            <p>Profile Page</p>\r\n        </div>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,qQAAC;QAAI,WAAU;;0BACX,qQAAC;gBAAO,WAAU;0BAAuG;;;;;;0BACzH,qQAAC;0BAAG;;;;;;0BACJ,qQAAC;;;;;0BACD,qQAAC;0BAAE;;;;;;;;;;;;AAGf","debugId":null}}]
+}

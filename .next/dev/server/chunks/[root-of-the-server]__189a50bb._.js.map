@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/Kim%20and%20Dyl/Dylan/Coding/Notes/NextJs/my-app/src/app/api/users/logout/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\n\r\nexport async function GET() {\r\n    try {\r\n        const response = await NextResponse.json({\r\n            message: \"Logout Successful\",\r\n            success: true\r\n        })\r\n        response.cookies.set(\"token\", \"\", { httpOnly: true, expires: new Date(0) });\r\n        return response\r\n     }\r\n    catch (error: any) {\r\n        return NextResponse.json({ error: error.message }, { status: 500 })\r\n    }\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe;IAClB,IAAI;QACA,MAAM,WAAW,MAAM,uKAAY,CAAC,IAAI,CAAC;YACrC,SAAS;YACT,SAAS;QACb;QACA,SAAS,OAAO,CAAC,GAAG,CAAC,SAAS,IAAI;YAAE,UAAU;YAAM,SAAS,IAAI,KAAK;QAAG;QACzE,OAAO;IACV,EACD,OAAO,OAAY;QACf,OAAO,uKAAY,CAAC,IAAI,CAAC;YAAE,OAAO,MAAM,OAAO;QAAC,GAAG;YAAE,QAAQ;QAAI;IACrE;AACJ","debugId":null}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/GitHub/Springboard-Capstone/my-app/src/app/games/page.tsx"],"sourcesContent":["import { NextRequest } from 'next/server'\r\nimport React from 'react'\r\n\r\nexport default function GamesPage(request: NextRequest) {\r\n\r\n    \r\n\r\n    return (\r\n        <div className=\"flex min-h-screen items-top justify-center font-sans dark:bg-black\">\r\n            Games\r\n        </div>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;;AAGe,SAAS,UAAU,OAAoB;IAIlD,qBACI,8OAAC;QAAI,WAAU;kBAAqE;;;;;;AAI5F","debugId":null}}]
+}

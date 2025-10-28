@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/Kim%20and%20Dyl/Dylan/Coding/Notes/NextJs/my-app/src/proxy.ts"],"sourcesContent":["import { NextResponse, NextRequest } from 'next/server'\r\n\r\n// This function can be marked `async` if using `await` inside\r\nexport function proxy(request: NextRequest) {\r\n    const path = request.nextUrl.pathname\r\n\r\n    const isPublicPath = path === '/login' || path === '/signup'\r\n\r\n    const token = request.cookies.get('token')?.value || ''\r\n}\r\n\r\nexport const config = {\r\n    matcher: [\r\n        '/',\r\n        '/login',\r\n        '/profile',\r\n        '/signup'\r\n    ],\r\n}\r\n"],"names":[],"mappings":";;;;;;AAGO,SAAS,MAAM,OAAoB;IACtC,MAAM,OAAO,QAAQ,OAAO,CAAC,QAAQ;IAErC,MAAM,eAAe,SAAS,YAAY,SAAS;IAEnD,MAAM,QAAQ,QAAQ,OAAO,CAAC,GAAG,CAAC,UAAU,SAAS;AACzD;AAEO,MAAM,SAAS;IAClB,SAAS;QACL;QACA;QACA;QACA;KACH;AACL","debugId":null}}]
+}
