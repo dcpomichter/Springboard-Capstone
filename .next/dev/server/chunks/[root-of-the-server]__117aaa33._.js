@@ -56,9 +56,10 @@ async function proxy(request) {
     const path = request.nextUrl.pathname;
     const isPublicPath = path === '/login' || path === '/signup' || path === '/verifyemail';
     const token = request.cookies.get('token')?.value || '';
-    if (path === '/profile' && token) {
-        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL(`/profile`, request.nextUrl));
-    }
+    // const decodedToken = jwt.verify(token, process.env.TOKEN_SECRET!)
+    // if (path === '/profile' && token) {
+    //     return NextResponse.redirect(new URL(`/profile/${decodedToken.id}`, request.nextUrl))
+    // }
     if (isPublicPath && token) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL('/profile', request.nextUrl));
     }

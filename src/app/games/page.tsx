@@ -28,14 +28,14 @@ export default function GamesPage() {
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
                 <h1>Games</h1>
                 <h2>{loading ? "Loading..." : ""}</h2>
-                {<div className="games">
+                <div className="games">
                     {data.map(game => (
-                        <Link href={`/games/${game._id.toString()}`} key={game._id} className="game">
+                        <Link href={`/games/${game._id.toString()}`} key={game._id} className="game-card">
                             <p>{game.title}</p>
                             <p>Category: {game.category}</p>
                         </Link>
                     ))}
-                </div>}
+                </div>
                 <button> <Link href={'/games/creategame'}>Add a Game </Link></button>
             </div>
         </>

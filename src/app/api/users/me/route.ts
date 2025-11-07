@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
     try {
         const userId = await getDataFromToken(request)
         const user = await User.findById(userId).select("-password")
+
         const updatedLibrary = []
         const updatedReviews = []
         for (let game of user.library) {
@@ -21,7 +22,7 @@ export async function GET(request: NextRequest) {
             const reviewDetails = await Review.findById(review)
             updatedReviews.push(reviewDetails)
         }
-        return NextResponse.json({
+        const page = NextResponse.json({
             message: "User Found",
             user: {
                 ...user,
@@ -29,6 +30,8 @@ export async function GET(request: NextRequest) {
                 reviews: updatedReviews
             }
         })
+
+        return page
     }
     catch (error: any) {
         return NextResponse.json({ error: error.message }, { status: 400 })

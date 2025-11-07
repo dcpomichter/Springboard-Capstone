@@ -1,5 +1,6 @@
 "use client"
 import axios from "axios";
+import { truncate } from "fs";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import toast from "react-hot-toast";
@@ -7,7 +8,7 @@ import toast from "react-hot-toast";
 export default function GameDetailsPage({ params }: any) {
     const router = useRouter()
     const [data, setData] = React.useState({})
-    const [loading, setLoading] = React.useState({})
+    const [loading, setLoading] = React.useState(true)
 
     const { gameId } = React.use(params)
 

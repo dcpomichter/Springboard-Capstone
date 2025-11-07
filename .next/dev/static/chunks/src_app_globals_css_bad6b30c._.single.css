@@ -338,6 +338,12 @@
     justify-content: center;
   }
 
+  .truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   .rounded {
     border-radius: .25rem;
   }
@@ -474,8 +480,14 @@ body {
 }
 
 .game {
+  background-color: var(--dark-color);
   border: 2px solid var(--dark-gray);
+  width: 100%;
   color: var(--dice-numbers);
+  border-radius: 4px;
+  margin: .5rem;
+  position: relative;
+  box-shadow: 0 5px 10px #0009;
 }
 
 .game p {
@@ -486,6 +498,227 @@ body {
 button {
   background: var(--green-dots);
   color: var(--light-gray);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.movie-overlay {
+  z-index: 1;
+  background: linear-gradient(#1e1b2600 30%, #1e1b26b3 60%, #1e1b26 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.movie-content {
+  padding: var(--card-padding);
+  z-index: 2;
+  margin-top: -120px;
+  position: relative;
+}
+
+.title-row {
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  display: flex;
+}
+
+.movie-title {
+  color: #fff;
+  text-shadow: 0 1px 2px #0000004d;
+  flex: 1;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.year-badge {
+  color: var(--text-lighter);
+  opacity: .85;
+  margin-left: 8px;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rating-badge {
+  background-color: var(--brand-color);
+  color: #fff;
+  letter-spacing: .5px;
+  border-radius: 4px;
+  margin-top: 3px;
+  padding: 2px 8px;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px #0003;
+}
+
+.metadata {
+  margin: 8px 0 var(--section-space);
+  align-items: center;
+  display: flex;
+}
+
+.duration {
+  color: var(--text-light);
+  align-items: center;
+  margin-right: 16px;
+  font-size: 13px;
+  display: flex;
+}
+
+.duration-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--text-light);
+  margin-right: 4px;
+}
+
+.genres {
+  margin-bottom: var(--section-space);
+  flex-wrap: wrap;
+  gap: 6px;
+  display: flex;
+}
+
+.genre-tag {
+  color: var(--text-lighter);
+  background-color: #fe41411a;
+  border: 1px solid #fe41414d;
+  border-radius: 16px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.ratings-row {
+  margin-bottom: var(--section-space);
+  padding-bottom: var(--section-space);
+  border-bottom: 1px solid #ffffff1a;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.star-rating {
+  align-items: center;
+  display: flex;
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+}
+
+.star-filled {
+  fill: var(--pow-red);
+}
+
+.star-half {
+  fill: url("#halfGradient");
+}
+
+.star-empty {
+  fill: #fff3;
+}
+
+.rating-text {
+  color: var(--text-lighter);
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.description-section {
+  margin-bottom: var(--section-space);
+}
+
+.section-title {
+  letter-spacing: 1px;
+  color: var(--text-lighter);
+  margin-bottom: 10px;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.movie-description {
+  color: var(--text-light);
+  text-align: justify;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.action-row {
+  grid-template-columns: 1fr repeat(3, auto);
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  display: grid;
+}
+
+.watch-btn {
+  background-color: var(--brand-color);
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  transition: all .3s;
+  display: flex;
+  box-shadow: 0 4px 8px #fe41414d;
+}
+
+.watch-btn:hover {
+  background-color: #ff5151;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px #fe414166;
+}
+
+.watch-btn-text {
+  color: #fff;
+  margin-left: 8px;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.action-btn {
+  cursor: pointer;
+  background-color: #ffffff0d;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: all .2s;
+  display: flex;
+}
+
+.action-btn:hover {
+  background-color: #ffffff1a;
+  transform: translateY(-2px);
+}
+
+.action-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--text-lighter);
 }
 
 @property --tw-rotate-x {
