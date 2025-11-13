@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "react-hot-toast"
+import Loading from "../components/Loading";
 
 export default function GamesPage() {
     const router = useRouter()
@@ -27,13 +28,15 @@ export default function GamesPage() {
         <>
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
                 <h1>Games</h1>
-                <h2>{loading ? "Loading..." : ""}</h2>
-                <div className="games">
+                {loading ? <Loading message="Loading Games..." /> : ""}
+                <div className="flex flex-col w-1/2  items-center games">
                     {data.map(game => (
-                        <Link href={`/games/${game._id.toString()}`} key={game._id} className="game-card">
-                            <p>{game.title}</p>
-                            <p>Category: {game.category}</p>
-                        </Link>
+                        <div className="game" key={game._id.toString()}>
+                            <Link href={`/games/${game._id.toString()}`} key={game._id} >
+                                <p>{game.title}</p>
+                                <p>Category: {game.category}</p>
+                            </Link>
+                        </div>
                     ))}
                 </div>
                 <button> <Link href={'/games/creategame'}>Add a Game </Link></button>

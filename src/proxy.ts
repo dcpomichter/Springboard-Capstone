@@ -12,7 +12,18 @@ export async function proxy(request: NextRequest) {
     let decodedToken
 
     if (token !== '') {
-        decodedToken = jwt.verify(token, process.env.TOKEN_SECRET!)
+        try {
+            decodedToken = jwt.verify(token, process.env.TOKEN_SECRET!)
+        }
+        catch (err: any) {
+            if (err.message === 'jwt expired') {
+                const response = await NextResponse.json({
+                    message: "Logout Successful",
+                    success: true
+                })
+                response.cookies.set("token", "", { httpOnly: true, expires: new Date(0) });
+            }
+        }
     }
 
     if (path === '/profile' && token) {

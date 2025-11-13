@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
+import Loading from '@/app/components/Loading';
 
 export default function CreateReviewPage() {
     const router = useRouter()
@@ -43,7 +44,7 @@ export default function CreateReviewPage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2" >
-            <h1>{loading ? "Procesing..." : "Create a New Review"}</h1>
+            {loading ? <Loading message="Processing Review..." /> : <h1>Create a New Review</h1>}
             <br />
             <label htmlFor='title'>Title</label>
             <input

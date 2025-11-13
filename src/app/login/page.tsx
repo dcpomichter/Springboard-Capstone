@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
+import Loading from '../components/Loading';
 
 export default function LoginPage() {
     const router = useRouter()
@@ -40,7 +41,8 @@ export default function LoginPage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2" >
-            <h1>{loading ? "Processing..." : "Login!"}</h1>
+            {loading ?
+                <Loading message="Logging In..." /> : <h1>"Login!"</h1>}
             <hr />
             <label htmlFor='email'>Email</label>
             <input

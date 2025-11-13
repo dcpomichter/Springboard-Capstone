@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from 'react-hot-toast'
+import Loading from '../components/Loading';
 
 export default function LogoutPage() {
     const router = useRouter()
@@ -32,7 +33,7 @@ export default function LogoutPage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2" >
-            {loading ? <h1>Logging Out...</h1> : <h1>Log out attempted</h1>}
+            {loading ? <Loading message="Logging Out..." /> : <h1>Log out attempted</h1>}
         </div>
     )
 }

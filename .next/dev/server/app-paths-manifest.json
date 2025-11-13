@@ -1,12 +1,9 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/games/[gameId]/route": "app/api/games/[gameId]/route.js",
-  "/api/users/login/route": "app/api/users/login/route.js",
-  "/api/users/logout/route": "app/api/users/logout/route.js",
-  "/api/users/me/route": "app/api/users/me/route.js",
-  "/games/[gameId]/page": "app/games/[gameId]/page.js",
-  "/login/page": "app/login/page.js",
-  "/logout/page": "app/logout/page.js",
+  "/api/games/route": "app/api/games/route.js",
+  "/api/reviews/route": "app/api/reviews/route.js",
+  "/games/creategame/page": "app/games/creategame/page.js",
+  "/games/page": "app/games/page.js",
   "/page": "app/page.js",
-  "/profile/[id]/page": "app/profile/[id]/page.js"
+  "/reviews/newreview/page": "app/reviews/newreview/page.js",
+  "/reviews/page": "app/reviews/page.js"
 }

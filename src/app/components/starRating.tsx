@@ -1,0 +1,7 @@
+export default function StarRating() {
+    return (
+        <svg className="star star-filled" viewBox="0 0 24 24">
+            <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z" />
+        </svg>
+    )
+}

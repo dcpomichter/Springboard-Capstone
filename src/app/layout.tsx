@@ -34,10 +34,18 @@ export default async function RootLayout({
         <Toaster />
         <div className="flex items-right justify-center">
           {/* <LogoutLogin /> */}
-          <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" style={{ color: "var(--bums-dark-blue)" }} href={'/'}>Home</Link>
-          <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" style={{ color: "var(--bums-dark-blue)" }} href={'/profile'}>Profile</Link>
-          <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" style={{ color: "var(--bums-dark-blue)" }} href={'/games'}>Games</Link>
-          <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" style={{ color: "var(--bums-dark-blue)" }} href={'/reviews'}>Reviews</Link>
+          <button>
+            <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" href={'/'}>Home</Link>
+          </button>
+          <button>
+            <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" href={'/profile'}>Profile</Link>
+          </button>
+          <button>
+            <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" href={'/games'}>Games</Link>
+          </button>
+          <button>
+            <Link className="flex-col items-right justify-center p-1 m-2 bg-white-300" href={'/reviews'}>Reviews</Link>
+          </button>
         </div>
         {children}
       </body>

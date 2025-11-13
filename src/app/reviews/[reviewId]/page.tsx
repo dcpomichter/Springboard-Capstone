@@ -1,4 +1,5 @@
 "use client"
+import Loading from "@/app/components/Loading";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
@@ -31,7 +32,7 @@ export default function ReviewDetailsPage({ params }: any) {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            {loading ? <h1>Loading...</h1> :
+            {loading ? <Loading message="Loading Review..." /> :
                 <>
                     <h1 className="text-2xl">{data.title}</h1>
                     <div className="game">

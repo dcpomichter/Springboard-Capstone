@@ -84,7 +84,20 @@ async function proxy(request) {
     const token = request.cookies.get('token')?.value || '';
     let decodedToken;
     if (token !== '') {
-        decodedToken = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["default"].verify(token, process.env.TOKEN_SECRET);
+        try {
+            decodedToken = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["default"].verify(token, process.env.TOKEN_SECRET);
+        } catch (err) {
+            if (err.message === 'jwt expired') {
+                const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                    message: "Logout Successful",
+                    success: true
+                });
+                response.cookies.set("token", "", {
+                    httpOnly: true,
+                    expires: new Date(0)
+                });
+            }
+        }
     }
     if (path === '/profile' && token) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL(`/profile/${decodedToken.id}`, request.nextUrl));

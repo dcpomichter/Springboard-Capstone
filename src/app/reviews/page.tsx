@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "react-hot-toast"
 import Game from "@/models/gameModel";
+import Loading from "../components/Loading";
 
 export default function ReviewsPage() {
     const router = useRouter()
@@ -29,7 +30,7 @@ export default function ReviewsPage() {
         <>
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
                 <h1>Reviews</h1>
-                <h2>{loading ? "Loading Reviews..." : ""}</h2>
+                {loading ? <Loading message="Loading Reviews..." /> : ""}
                 {<div className="Reviews">
                     {data.map(review => (
                         <Link href={`/reviews/${review._id.toString()}`} key={review._id} className="review">

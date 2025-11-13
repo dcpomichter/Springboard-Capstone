@@ -147,37 +147,47 @@ function GamesPage() {
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                    children: loading ? "Loading..." : ""
+                    children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Loading, {}, void 0, false, {
+                        fileName: "[project]/src/app/games/page.tsx",
+                        lineNumber: 30,
+                        columnNumber: 32
+                    }, this) : ""
                 }, void 0, false, {
                     fileName: "[project]/src/app/games/page.tsx",
                     lineNumber: 30,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "games",
-                    children: data.map((game)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: `/games/${game._id.toString()}`,
+                    className: "flex flex-col w-1/2  items-center games",
+                    children: data.map((game)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "game",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    children: game.title
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/games/page.tsx",
-                                    lineNumber: 34,
-                                    columnNumber: 29
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    children: [
-                                        "Category: ",
-                                        game.category
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/games/page.tsx",
-                                    lineNumber: 35,
-                                    columnNumber: 29
-                                }, this)
-                            ]
-                        }, game._id, true, {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: `/games/${game._id.toString()}`,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: game.title
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/games/page.tsx",
+                                        lineNumber: 35,
+                                        columnNumber: 33
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: [
+                                            "Category: ",
+                                            game.category
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/games/page.tsx",
+                                        lineNumber: 36,
+                                        columnNumber: 33
+                                    }, this)
+                                ]
+                            }, game._id, true, {
+                                fileName: "[project]/src/app/games/page.tsx",
+                                lineNumber: 34,
+                                columnNumber: 29
+                            }, this)
+                        }, void 0, false, {
                             fileName: "[project]/src/app/games/page.tsx",
                             lineNumber: 33,
                             columnNumber: 25
@@ -185,7 +195,7 @@ function GamesPage() {
                 }, void 0, false, {
                     fileName: "[project]/src/app/games/page.tsx",
                     lineNumber: 31,
-                    columnNumber: 18
+                    columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     children: [
@@ -195,13 +205,13 @@ function GamesPage() {
                             children: "Add a Game "
                         }, void 0, false, {
                             fileName: "[project]/src/app/games/page.tsx",
-                            lineNumber: 39,
+                            lineNumber: 41,
                             columnNumber: 26
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/games/page.tsx",
-                    lineNumber: 39,
+                    lineNumber: 41,
                     columnNumber: 17
                 }, this)
             ]
