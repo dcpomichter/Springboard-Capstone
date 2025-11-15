@@ -1,0 +1,10 @@
+.login {
+    margin: 1rem;
+}
+
+label {
+    color: #3AAE4B;
+    background: rgba(111, 227, 243, 0.5);
+    border-radius: 5%;
+    margin: 0.25rem;
+}

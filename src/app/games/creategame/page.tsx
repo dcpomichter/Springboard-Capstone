@@ -15,6 +15,13 @@ export default function CreateGamePage() {
         publisher: "",
         owners: []
     })
+    const [gamesList, setGamesList] = React.useState(null)
+
+    const getGames = async () => {
+        const response = await axios.get('/api/games')
+        setGamesList(response.data.games)
+        toast.success("Games Retrieved")
+    }
 
 
     const [buttonDisabled, setbuttonDisabled] = React.useState(false)
@@ -42,19 +49,23 @@ export default function CreateGamePage() {
         }
     }, [game])
 
+    useEffect(() => {
+        getGames()
+    }, [])
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2" >
             {loading ? <Loading message="Processing..." /> : <h1>Create a New Game</h1>}
             <br />
+
             <label htmlFor='title'>Title</label>
-            <input
-                className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
-                id='title'
-                type='text'
-                value={game.title}
-                onChange={(evt) => setGame({ ...game, title: evt.target.value })}
-                placeholder='Title*'
-            />
+            <select className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' id="dropdown" value={game.title} onChange={(evt) => setGame({ ...game, title: evt.target.value })} required>
+                <option value="">--Select Game--</option>
+                {/* {gamesList.map((game) => (
+                    <option key={game._id.toString()} value={game._id}>
+                    </option>
+                ))} */}
+            </select>
             <label htmlFor='category'>Category</label>
             <input
                 className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'

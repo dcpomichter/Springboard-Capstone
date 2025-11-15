@@ -115,7 +115,8 @@ const config = {
         '/profile',
         '/signup',
         '/verifyemail',
-        '/games/creategame'
+        '/games/creategame',
+        '/reviews/newreview'
     ]
 };
 }),

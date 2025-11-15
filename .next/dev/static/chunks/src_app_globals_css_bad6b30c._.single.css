@@ -482,6 +482,11 @@ body {
   box-shadow: 0 5px 10px #0009;
 }
 
+.game:focus, .game:hover {
+  transition: transform .3s cubic-bezier(.39, .575, .565, 1), opacity .3s;
+  transform: translateZ(34px);
+}
+
 .title-row {
   align-items: flex-start;
   margin-bottom: 6px;
