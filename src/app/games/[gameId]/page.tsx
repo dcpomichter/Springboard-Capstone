@@ -11,7 +11,7 @@ export default function GameDetailsPage({ params }: any) {
     const [data, setData] = React.useState({})
     const [loading, setLoading] = React.useState(true)
 
-    const { gameId } = React.use(params)
+    const { gameId } = React.use<any>(params)
 
     const getGameDetails = async () => {
         try {
