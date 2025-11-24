@@ -23,8 +23,8 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-                user: `${process.env.NEXT_PUBLIC_MAILER_USER}`,
-                pass: `${process.env.NEXT_PUBLIC_MAILER_PASS}`
+                user: `${process.env.MAILER_USER}`,
+                pass: `${process.env.MAILER_PASS}`
             }
         });
 
@@ -33,9 +33,9 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             to: email,
             subject: emailType === "VERIFY" ? "Verify your Email" : "Reset your Password",
             html: emailType === "VERIFY" ?
-                `<p>Click <a href="${process.env.NEXT_PUBLIC_DOMAIN}/verifyemail?token=${hashedToken}">here</a> to Verify your Email or copy and paste the link below into your browser. <br> ${process.env.NEXT_PUBLIC_DOMAIN}/verifyemail?token=${hashedToken}</p>`
+                `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to Verify your Email or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
                 :
-                `<p>Click <a href="${process.env.NEXT_PUBLIC_DOMAIN}/reset?token=${hashedToken}">here</a> to Reset your Password or copy and paste the link below into your browser. <br> ${process.env.NEXT_PUBLIC_DOMAIN}/reset?token=${hashedToken}</p>`
+                `<p>Click <a href="${process.env.DOMAIN}/reset?token=${hashedToken}">here</a> to Reset your Password or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/reset?token=${hashedToken}</p>`
         }
 
         const mailResponse = await transport.sendMail(mailOptions)
