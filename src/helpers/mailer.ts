@@ -1,6 +1,11 @@
-import nodemailer from 'nodemailer';
+import Mailjet from 'node-mailjet';
 import User from '@/models/userModel';
 import bcrypt from 'bcryptjs';
+
+const mailjet = new Mailjet({
+    apiKey: process.env.MJ_APIKEY_PUBLIC,
+    apiSecret: process.env.MJ_APIKEY_PRIVATE
+});
 
 export const sendEmail = async ({ email, emailType, userId }: any) => {
     try {
