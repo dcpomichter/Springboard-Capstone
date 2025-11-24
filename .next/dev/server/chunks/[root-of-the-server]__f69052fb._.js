@@ -113,6 +113,7 @@ const config = {
     matcher: [
         '/login',
         '/profile',
+        `/profile/:id`,
         '/signup',
         '/verifyemail',
         '/games/creategame',

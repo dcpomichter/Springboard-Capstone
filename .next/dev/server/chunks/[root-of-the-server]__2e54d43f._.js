@@ -100,6 +100,9 @@ const userSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ],
         unique: true
     },
+    city: {
+        type: String
+    },
     isVerified: {
         type: Boolean,
         default: false
@@ -120,12 +123,13 @@ const userSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
             ref: 'Review'
         }
     ],
+    location: String,
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date
 });
-const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.users || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model("User", userSchema);
+const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.User || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model("User", userSchema);
 const __TURBOPACK__default__export__ = User;
 }),
 "[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
@@ -257,20 +261,19 @@ const sendEmail = async ({ email, emailType, userId })=>{
                 runValidators: true
             });
         }
-        // Looking to send emails in production? Check out our Email API/SMTP product!
         const transport = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].createTransport({
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-                user: "951a544f073f95",
-                pass: "7eacd0c8902c1d"
+                user: `${process.env.MAILER_USER}`,
+                pass: `${process.env.MAILER_PASS}`
             }
         });
         const mailOptions = {
             from: "admin@boardbums.com",
             to: email,
             subject: emailType === "VERIFY" ? "Verify your Email" : "Reset your Password",
-            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ? "Verify your Email" : "Reset your Password"} or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+            html: emailType === "VERIFY" ? `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to Verify your Email or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>` : `<p>Click <a href="${process.env.DOMAIN}/reset?token=${hashedToken}">here</a> to Reset your Password or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/reset?token=${hashedToken}</p>`
         };
         const mailResponse = await transport.sendMail(mailOptions);
         return mailResponse;
@@ -300,7 +303,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$helpers$2f$mailer$2e$
 async function POST(request) {
     try {
         const reqBody = await request.json();
-        const { username, email, password } = reqBody;
+        const { username, email, password, city } = reqBody;
         //verify if user exists
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$userModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
             email
@@ -318,7 +321,8 @@ async function POST(request) {
         const newUser = new __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$userModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"]({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            city
         });
         const savedUser = await newUser.save();
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$helpers$2f$mailer$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendEmail"])({
@@ -332,6 +336,7 @@ async function POST(request) {
             savedUser
         });
     } catch (error) {
+        console.log(error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             error: error.message
         }, {

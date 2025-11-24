@@ -4,14 +4,16 @@ import User from "@/models/userModel"
 import { connect } from "@/dbConfig/dbConfig";
 import Game from "@/models/gameModel";
 import Review from "@/models/reviewModel";
+import reverseGeocode from "@/helpers/reverseGeocode";
 
 connect();
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
     try {
-        const userId = await getDataFromToken(request)
-        const user = await User.findById(userId).select("-password")
-
+        const reqBody = await request.json()
+        const loggedUser = getDataFromToken(request);
+        const { id } = reqBody
+        const user = await User.findById(id).select("-password")
         const updatedLibrary = []
         const updatedReviews = []
         for (let game of user.library) {
@@ -27,10 +29,10 @@ export async function GET(request: NextRequest) {
             user: {
                 ...user,
                 library: updatedLibrary,
-                reviews: updatedReviews
+                reviews: updatedReviews,
+                loggedUser
             }
         })
-
         return page
     }
     catch (error: any) {

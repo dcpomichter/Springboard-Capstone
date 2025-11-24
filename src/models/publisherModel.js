@@ -6,9 +6,6 @@ const publisherSchema = new mongoose.Schema({
         required: [true, "Please provide a publisher name"],
         unique: true
     },
-    established: {
-        type: Date,
-    },
     gamesPublished: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -17,6 +14,6 @@ const publisherSchema = new mongoose.Schema({
     ]
 })
 
-const Publisher = mongoose.models.Publisher || mongoose.model("Publisher", gameSchema)
+const Publisher = mongoose.models.Publisher || mongoose.model("Publisher", publisherSchema)
 
 export default Publisher

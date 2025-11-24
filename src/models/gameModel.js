@@ -11,15 +11,16 @@ const gameSchema = new mongoose.Schema({
         required: [true, "Please provide a game category"]
     },
     numberOfPlayers: {
-        type: Number,
+        type: String,
         required: [true, "Please provide a number of players"]
     },
     gameplayTime: {
-        type: Number,
-        required: [true, "Please include the gameplay time"]
+        type: String,
+        required: [true, "Please include the gameplay time, in minutes"]
     },
     publisher: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Publisher'
     },
     owners: [
         {

@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please provide an email"],
         unique: true
     },
+    city: {
+        type: String
+    },
     isVerified: {
         type: Boolean,
         default: false
@@ -35,6 +38,7 @@ const userSchema = new mongoose.Schema({
             ref: 'Review'
         }
     ],
+    location: String,
     forgotPasswordToken: String,
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,

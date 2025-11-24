@@ -18,14 +18,13 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             }, { new: true, runValidators: true })
         }
 
-        // Looking to send emails in production? Check out our Email API/SMTP product!
+
         const transport = nodemailer.createTransport({
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
-                user: "951a544f073f95",
-                pass: "7eacd0c8902c1d"
-                //ADD these Credentials to .env file
+                user: `${process.env.MAILER_USER}`,
+                pass: `${process.env.MAILER_PASS}`
             }
         });
 
@@ -33,7 +32,10 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
             from: "admin@boardbums.com",
             to: email,
             subject: emailType === "VERIFY" ? "Verify your Email" : "Reset your Password",
-            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to ${emailType === "VERIFY" ? "Verify your Email" : "Reset your Password"} or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+            html: emailType === "VERIFY" ?
+                `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to Verify your Email or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}</p>`
+                :
+                `<p>Click <a href="${process.env.DOMAIN}/reset?token=${hashedToken}">here</a> to Reset your Password or copy and paste the link below into your browser. <br> ${process.env.DOMAIN}/reset?token=${hashedToken}</p>`
         }
 
         const mailResponse = await transport.sendMail(mailOptions)

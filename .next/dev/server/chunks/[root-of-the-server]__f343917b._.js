@@ -75,7 +75,7 @@ const reviewSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongo
         type: Number,
         required: [
             true,
-            "Please provide a rating"
+            "Please provide a rating out of 5"
         ]
     },
     reviewer: {

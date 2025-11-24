@@ -23,9 +23,8 @@ export async function POST(request: NextRequest) {
         const user = await User.findById(review.reviewer)
         const game = await Game.findById(review.game)
 
-        review._doc.reviewer = user.username
-        review._doc.game = game.title
-
+        review._doc.reviewer = user
+        review._doc.game = game
 
         return NextResponse.json({
             message: "Review Found",

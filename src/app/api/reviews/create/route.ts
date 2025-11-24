@@ -4,7 +4,6 @@ import Game from "@/models/gameModel";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import { getDataFromToken } from "@/helpers/getDataFromToken";
-import { toast } from "react-hot-toast";
 
 connect()
 
@@ -25,16 +24,15 @@ export async function POST(request: NextRequest) {
 
         reviewer = userId
 
-        const gameDetails = await Game.findOne({ title: game })
 
 
         //verify if game exists
 
+        const gameDetails = await Game.findById(game)
+
         if (!gameDetails) {
             return NextResponse.json({ error: "Game does not exist" }, { status: 400 })
         }
-
-        game = gameDetails._id
 
         const newReview = new Review({
             title,
@@ -50,8 +48,6 @@ export async function POST(request: NextRequest) {
         await gameDetails.save()
         user.reviews.push(savedReview._id)
         await user.save()
-
-        await gameDetails.save()
 
         return NextResponse.json({
             message: "Review created successfully",

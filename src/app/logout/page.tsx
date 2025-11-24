@@ -18,6 +18,7 @@ export default function LogoutPage() {
             const response = await axios.get('/api/users/logout')
             toast.success("Logout Success")
             router.push('/login')
+            router.refresh()
         }
         catch (error: any) {
             toast.error("Logout Failed, " + error.message)

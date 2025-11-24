@@ -24,6 +24,7 @@ export default function LoginPage() {
             const response = await axios.post("/api/users/login", user);
             toast.success("Login Success")
             router.push("/profile")
+            router.refresh()
         }
         catch (error: any) {
             toast.error("Login Failed" + error.message)
@@ -45,7 +46,7 @@ export default function LoginPage() {
             {loading ?
                 <Loading message="Logging In..." /> : <h1>Login!</h1>}
             <hr />
-            <form className='flex flex-col login'>
+            <form className='flex flex-col login' onSubmit={onLogin}>
                 <label htmlFor='email'>Email</label>
                 <input
                     className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
@@ -66,6 +67,7 @@ export default function LoginPage() {
                 />
             </form>
             <button className='login' onClick={onLogin}>{buttonDisabled ? "No Login" : "Login"}</button>
+            <Link href='/reset'>Forgot Password</Link>
             <Link href='/signup'>Visit Signup Page</Link>
         </div>
     )

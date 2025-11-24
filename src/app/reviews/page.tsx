@@ -29,16 +29,18 @@ export default function ReviewsPage() {
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
-                <h1>Reviews</h1>
+                <h1 className="title">Reviews</h1>
                 {loading ? <Loading message="Loading Reviews..." /> : ""}
-                {<div className="Reviews">
-                    {data.map(review => (
-                        <Link href={`/reviews/${review._id.toString()}`} key={review._id} className="review">
-                            <p>{review.title}</p>
+                {data.map(review => {
+                    return (
+                        <div className="game" key={review._id} >
+                            <Link href={`/reviews/${review._id.toString()}`} >
+                                <p>{review.title}</p>
+                            </Link>
                             <p>Rating: {review.rating} /5</p>
-                        </Link>
-                    ))}
-                </div>}
+                        </div>
+                    )
+                })}
                 <button> <Link href={'/reviews/newreview'}>Add a Review </Link></button>
             </div>
         </>

@@ -95,7 +95,7 @@ const reviewSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongo
         type: Number,
         required: [
             true,
-            "Please provide a rating"
+            "Please provide a rating out of 5"
         ]
     },
     reviewer: {
@@ -136,21 +136,22 @@ const gameSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ]
     },
     numberOfPlayers: {
-        type: Number,
+        type: String,
         required: [
             true,
             "Please provide a number of players"
         ]
     },
     gameplayTime: {
-        type: Number,
+        type: String,
         required: [
             true,
-            "Please include the gameplay time"
+            "Please include the gameplay time, in minutes"
         ]
     },
     publisher: {
-        type: String
+        type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema.Types.ObjectId,
+        ref: 'Publisher'
     },
     owners: [
         {
@@ -305,10 +306,8 @@ async function POST(request) {
         const userId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$helpers$2f$getDataFromToken$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getDataFromToken"])(request);
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$userModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findById(userId);
         reviewer = userId;
-        const gameDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$gameModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
-            title: game
-        });
         //verify if game exists
+        const gameDetails = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$gameModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findById(game);
         if (!gameDetails) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Game does not exist"
@@ -316,7 +315,6 @@ async function POST(request) {
                 status: 400
             });
         }
-        game = gameDetails._id;
         const newReview = new __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$models$2f$reviewModel$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"]({
             title,
             description,
@@ -329,7 +327,6 @@ async function POST(request) {
         await gameDetails.save();
         user.reviews.push(savedReview._id);
         await user.save();
-        await gameDetails.save();
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: "Review created successfully",
             success: true,

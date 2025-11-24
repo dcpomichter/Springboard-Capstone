@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import Games from "@/models/gameModel"
-import { connect } from "@/dbConfig/dbConfig";
-import toast from "react-hot-toast";
+import Games from "../../../models/gameModel"
+import { connect } from "../../../dbConfig/dbConfig";
 
 connect();
 
@@ -14,6 +13,6 @@ export async function GET(request: NextRequest) {
         })
     }
     catch (error: any) {
-        return NextResponse.json({ error: error.message }, {status: 400})
+        return NextResponse.json({ error: error.message }, { status: 400 })
     }
 }

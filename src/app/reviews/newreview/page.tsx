@@ -34,6 +34,26 @@ export default function CreateReviewPage() {
         }
     }
 
+    const [gamesList, setGamesList] = React.useState(null)
+    const [fetching, setFetching] = React.useState(true)
+    const getGames = async () => {
+        try {
+            setFetching(true)
+            const response = await axios.get('/api/games')
+            setGamesList(response.data.games)
+            toast.success("Games Retrieved")
+        }
+        catch (error: any) {
+            toast.error("Loading Failed" + error.message)
+        } finally {
+            setFetching(false)
+        }
+    }
+
+    useEffect(() => {
+        getGames()
+    }, [])
+
     useEffect(() => {
         if (review.title.length > 0 && review.description.length > 0 && review.rating > 0 && review.game.length > 0) {
             setbuttonDisabled(false)
@@ -57,11 +77,11 @@ export default function CreateReviewPage() {
             />
             <label htmlFor='description'>Description</label>
             <textarea
-                className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
+                className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 wrap-break-word'
                 id='description'
                 value={review.description}
                 onChange={(evt) => setReview({ ...review, description: evt.target.value })}
-                placeholder='Category*'
+                placeholder='Description*'
             />
             <label htmlFor='rating'>Rating</label>
             <input
@@ -74,15 +94,25 @@ export default function CreateReviewPage() {
                 placeholder='Rating, out of 5*'
             />
             <label htmlFor='game'>Game</label>
-            <input
+            <select
                 className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
-                id='game'
-                type='text'
+                id="game"
                 value={review.game}
-                onChange={(evt) => setReview({ ...review, game: evt.target.value })}
-                placeholder='Gameplay Time*'
-            />
-            <button className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' onClick={createReview}>{buttonDisabled ? "Cannot Create" : "Create Review"}</button>
+                onChange={(evt) => {
+                    setReview({ ...review, game: evt.target.value })
+                    if (evt.target.value === "Not Listed") {
+                        router.push('/games/creategame')
+                    }
+                }
+                }
+                required >
+                <option value="">--Select Game--</option>
+                {!fetching ? gamesList.map((game) => (
+                    <option key={game._id.toString()} value={game._id}> {game.title}
+                    </option>)) : ""}
+                <option>Not Listed</option>
+            </select>
+            <button className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' onClick={createReview}>{buttonDisabled ? "Cannot Post" : "Post Review"}</button>
         </div>
     )
 }

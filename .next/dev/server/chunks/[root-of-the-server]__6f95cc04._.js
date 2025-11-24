@@ -73,21 +73,22 @@ const gameSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         ]
     },
     numberOfPlayers: {
-        type: Number,
+        type: String,
         required: [
             true,
             "Please provide a number of players"
         ]
     },
     gameplayTime: {
-        type: Number,
+        type: String,
         required: [
             true,
-            "Please include the gameplay time"
+            "Please include the gameplay time, in minutes"
         ]
     },
     publisher: {
-        type: String
+        type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema.Types.ObjectId,
+        ref: 'Publisher'
     },
     owners: [
         {

@@ -13,12 +13,11 @@ export default function VerifyEmailPage() {
     const verifyUserEmail = async () => {
         try {
             await axios.post('/api/users/verifyemail', { token })
-
             setVerified(true)
         }
         catch (error: any) {
             setErrors(true);
-            toast.error(error.response.data)
+            console.log(error)
         }
     }
 
@@ -35,7 +34,7 @@ export default function VerifyEmailPage() {
 
     return (
         <div className='flex flex-col items-center justify-center min-h-screen py-2'>
-            <h1 className='text-4xl'>Verify Email</h1>
+            <h1 className='text-4xl title'>Verify Email</h1>
 
             {verified && (
                 <div>
@@ -46,6 +45,7 @@ export default function VerifyEmailPage() {
             {errors && (
                 <div>
                     <h2 className='text-2xl bg-red-500 text-black'>Error</h2>
+                    <p>{errors.message}</p>
                 </div>
             )}
 

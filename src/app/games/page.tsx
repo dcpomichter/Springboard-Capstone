@@ -22,12 +22,13 @@ export default function GamesPage() {
 
     useEffect(() => {
         getGames()
+        console.log(data)
     }, [])
 
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
-                <h1>Games</h1>
+                <h1 className="title">Games</h1>
                 {loading ? <Loading message="Loading Games..." /> : ""}
                 <div className="flex flex-col w-1/2  items-center games">
                     {data.map(game => (

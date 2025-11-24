@@ -3,6 +3,7 @@ import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken'
+import { revalidatePath } from "next/cache";
 
 connect()
 
@@ -40,6 +41,8 @@ export async function POST(request: NextRequest) {
         response.cookies.set("token", token, {
             httpOnly: true
         })
+
+        revalidatePath('/')
 
         return response
 
