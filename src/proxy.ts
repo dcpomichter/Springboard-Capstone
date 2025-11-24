@@ -13,7 +13,7 @@ export async function proxy(request: NextRequest) {
 
     if (token !== '') {
         try {
-            decodedToken = jwt.verify(token, process.env.TOKEN_SECRET!)
+            decodedToken = jwt.verify(token, process.env.NEXT_PUBLIC_TOKEN_SECRET!)
         }
         catch (err: any) {
             if (err.message === 'jwt expired') {
