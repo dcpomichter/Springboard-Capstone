@@ -34,3 +34,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+The fully deployed site [Board Bums](https://boardbums.vercel.app/) can be used to add games to the database, register users, write reviews of added games, and connect with other users.
+
+Future changes to the site, may include real-time messaging, more specific location data, among others.
