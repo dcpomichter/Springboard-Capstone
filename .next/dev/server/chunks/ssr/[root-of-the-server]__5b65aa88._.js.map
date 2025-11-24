@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/Kim%20and%20Dyl/Dylan/Coding/Notes/NextJs/my-app/src/app/profile/%5Bid%5D/page.tsx"],"sourcesContent":["import React from \"react\"\r\n\r\nexport default function UserProfile({ params }: any) {\r\n    const {id} = React.use(params)\r\n    return (\r\n        <div className=\"flex flex-col items-center justify-center min-h-screen py-2\">\r\n            <h1>Profile</h1>\r\n            <hr />\r\n            <p className=\"text-4xl\">Profile Page\r\n                <span className=\"p-2 ml-2 rounded bg-orange-500 text-black\">{id}</span>\r\n            </p>\r\n        </div>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS,YAAY,EAAE,MAAM,EAAO;IAC/C,MAAM,EAAC,EAAE,EAAC,GAAG,uOAAK,CAAC,GAAG,CAAC;IACvB,qBACI,qQAAC;QAAI,WAAU;;0BACX,qQAAC;0BAAG;;;;;;0BACJ,qQAAC;;;;;0BACD,qQAAC;gBAAE,WAAU;;oBAAW;kCACpB,qQAAC;wBAAK,WAAU;kCAA6C;;;;;;;;;;;;;;;;;;AAI7E","debugId":null}}]
-}

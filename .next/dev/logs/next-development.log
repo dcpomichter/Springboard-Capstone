@@ -1,6 +1,0 @@
-[00:00:03.419] Server  LOG      ✓ Ready in 2.7s
-[00:00:06.821] Server  LOG      ○ Compiling /profile/[id] ...
-[00:00:13.046] Server  LOG     MongoDB Connected successfully
-[00:00:13.286] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
-[00:00:24.835] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'username')
-[00:00:33.632] Server  LOG      ○ Compiling / ...

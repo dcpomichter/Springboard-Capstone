@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/kpape/OneDrive/Documents/Kim%20and%20Dyl/Dylan/Coding/Notes/NextJs/my-app/src/app/signup/page.tsx"],"sourcesContent":["\r\n\r\nexport default function SignupPage() {\r\n    return (\r\n        <div className=\"signup-content\" >\r\n            <h1>Sign Up!</h1>\r\n        </div>\r\n    )\r\n}\r\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACpB,qBACI,qQAAC;QAAI,WAAU;kBACX,cAAA,qQAAC;sBAAG;;;;;;;;;;;AAGhB","debugId":null}}]
-}
