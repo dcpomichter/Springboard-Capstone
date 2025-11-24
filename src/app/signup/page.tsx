@@ -65,7 +65,7 @@ export default function SignupPage() {
 
     const [isChecked, setIsChecked] = React.useState(false); // Initial state is unchecked
 
-    const handleCheckboxChange = (evt) => {
+    const handleCheckboxChange = (evt: any) => {
         setIsChecked(evt.target.checked); // Update state based on checkbox's 'checked' property
     };
 

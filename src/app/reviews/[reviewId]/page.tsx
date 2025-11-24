@@ -8,10 +8,10 @@ import toast from "react-hot-toast";
 
 export default function ReviewDetailsPage({ params }: any) {
     const router = useRouter()
-    const [data, setData] = React.useState({})
+    const [data, setData] = React.useState<any>({})
     const [loading, setLoading] = React.useState(true)
 
-    const { reviewId } = React.use(params)
+    const { reviewId } = React.use<any>(params)
 
     const getReviewDetails = async () => {
         try {

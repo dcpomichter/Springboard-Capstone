@@ -16,7 +16,7 @@ export default function ResetPasswordPage() {
     const [reset, setReset] = React.useState(false)
     const [errors, setErrors] = React.useState(false)
 
-    const resetPassword = async (evt) => {
+    const resetPassword = async (evt: any) => {
         evt.preventDefault();
         try {
             await axios.post('/api/users/reset', { token, password })

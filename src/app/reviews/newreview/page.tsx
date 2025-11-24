@@ -34,7 +34,7 @@ export default function CreateReviewPage() {
         }
     }
 
-    const [gamesList, setGamesList] = React.useState(null)
+    const [gamesList, setGamesList] = React.useState<any>(null)
     const [fetching, setFetching] = React.useState(true)
     const getGames = async () => {
         try {
@@ -107,7 +107,7 @@ export default function CreateReviewPage() {
                 }
                 required >
                 <option value="">--Select Game--</option>
-                {!fetching ? gamesList.map((game) => (
+                {!fetching ? gamesList.map((game: any) => (
                     <option key={game._id.toString()} value={game._id}> {game.title}
                     </option>)) : ""}
                 <option>Not Listed</option>

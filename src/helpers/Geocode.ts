@@ -1,4 +1,4 @@
-export default async function geocode(postal) {
+export default async function geocode(postal: any) {
     const url = `https://${process.env.NEXT_PUBLIC_MAP_URL}/postalCodeSearchJSON?postalcode=${encodeURIComponent(
         postal
     )}&maxRows=10&username=${process.env.NEXT_PUBLIC_API_KEY}`;

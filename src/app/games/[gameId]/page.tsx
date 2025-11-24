@@ -55,7 +55,7 @@ export default function GameDetailsPage({ params }: any) {
                     {data.reviews.length === 0 ?
                         <p>No reviews</p>
                         :
-                        data.reviews.map(review => {
+                        data.reviews.map((review: any) => {
                             return (
                                 <div className="game" key={review._id} >
                                     <Link href={`/reviews/${review._id.toString()}`} >

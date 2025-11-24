@@ -31,7 +31,7 @@ export default function GamesPage() {
                 <h1 className="title">Games</h1>
                 {loading ? <Loading message="Loading Games..." /> : ""}
                 <div className="flex flex-col w-1/2  items-center games">
-                    {data.map(game => (
+                    {data.map((game: any) => (
                         <div className="game" key={game._id.toString()}>
                             <Link href={`/games/${game._id.toString()}`} key={game._id} >
                                 <p>{game.title}</p>

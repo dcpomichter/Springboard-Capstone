@@ -31,7 +31,7 @@ export default function ReviewsPage() {
             <div className="flex flex-col items-center justify-center min-h-screen py-2">
                 <h1 className="title">Reviews</h1>
                 {loading ? <Loading message="Loading Reviews..." /> : ""}
-                {data.map(review => {
+                {data.map((review: any) => {
                     return (
                         <div className="game" key={review._id} >
                             <Link href={`/reviews/${review._id.toString()}`} >

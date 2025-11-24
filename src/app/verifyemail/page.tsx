@@ -3,7 +3,6 @@
 import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-import { toast } from 'react-hot-toast'
 
 export default function VerifyEmailPage() {
     const [token, setToken] = React.useState("");
@@ -45,7 +44,6 @@ export default function VerifyEmailPage() {
             {errors && (
                 <div>
                     <h2 className='text-2xl bg-red-500 text-black'>Error</h2>
-                    <p>{errors.message}</p>
                 </div>
             )}
 

@@ -14,7 +14,7 @@ import jwt from "jsonwebtoken";
 export default function UserProfile({ params }: any) {
     const router = useRouter()
     const userId = React.use(params)
-    const [data, setData] = React.useState({})
+    const [data, setData] = React.useState<any>({})
     const [loading, setLoading] = React.useState(true)
 
 
@@ -50,7 +50,7 @@ export default function UserProfile({ params }: any) {
                     </div>
                     <div className="flex flex-col columns-2 games">
                         <h3>Library</h3>
-                        {data.library.map(game => (
+                        {data.library.map((game: any) => (
                             <div className="game" key={game._id.toString()}>
                                 <Link href={`/games/${game._id.toString()}`} key={game._id}>
                                     <p className="title-row">{game.title}</p>
@@ -62,7 +62,7 @@ export default function UserProfile({ params }: any) {
                     </div>
                     <div className="flex flex-col columns-2 games">
                         <h3>Reviews</h3>
-                        {data.reviews.map(review => (
+                        {data.reviews.map((review: any) => (
                             <div className="game" key={review._id.toString()}>
                                 <Link href={`/reviews/${review._id.toString()}`} key={review._id} >
                                     <p className="title-row title">{review.title}</p>

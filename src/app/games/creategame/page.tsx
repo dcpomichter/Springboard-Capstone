@@ -15,7 +15,7 @@ export default function CreateGamePage() {
         publisher: "",
         owners: []
     })
-    const [gamesList, setGamesList] = React.useState(null)
+    const [gamesList, setGamesList] = React.useState<any>(null)
 
     const [fetching, setFetching] = React.useState(true)
     const getGames = async () => {
@@ -32,7 +32,7 @@ export default function CreateGamePage() {
         }
     }
 
-    const [publisherList, setPublisherList] = React.useState(null)
+    const [publisherList, setPublisherList] = React.useState<any>(null)
     const [fetchPublisher, setFetchPublisher] = React.useState(true)
     const getPublishers = async () => {
         try {
@@ -71,18 +71,18 @@ export default function CreateGamePage() {
     }, [])
 
     useEffect(() => {
-        if (((game.title.length > 0 && game.title !== "Not Listed") && game.category.length > 0 && game.numberOfPlayers.length > 0 && game.gameplayTime.length > 0 && (game.publisher.length > 0 && game.publisher !== "Not Listed")) || (game.title.length > 0 && newGame === "")) {
+        if (((game.title.length > 0 && game.title !== "Not Listed") && game.category.length > 0 && game.numberOfPlayers.length > 0 && game.gameplayTime.length > 0 && (game.publisher.length > 0 && game.publisher !== "Not Listed")) || (game.title.length > 0 && newGame === <></>)) {
             setbuttonDisabled(false)
         } else {
             setbuttonDisabled(true)
         }
     }, [game])
 
-    let newGame = ""
+    let newGame = <></>
 
     if (gamesList) {
-        let gameTitles = []
-        gamesList.map((game) => { gameTitles.push(game._id) })
+        let gameTitles: any[] = []
+        gamesList.map((game: any) => { gameTitles.push(game._id) })
         if (game.title !== "" && (!gameTitles.includes(game.title) || game.title === "Not Listed")) {
             newGame = <input
                 className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
@@ -94,11 +94,11 @@ export default function CreateGamePage() {
         }
     }
 
-    let newPublisher = ""
+    let newPublisher = <></>
 
     if (publisherList) {
-        let publisherNames = []
-        publisherList.map((publisher) => { publisherNames.push(publisher._id) })
+        let publisherNames: any[] = []
+        publisherList.map((publisher: any) => { publisherNames.push(publisher._id) })
         if (game.publisher !== "" && (!publisherNames.includes(game.publisher) || game.publisher === "Not Listed")) {
             newPublisher = <input
                 className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
@@ -123,13 +123,13 @@ export default function CreateGamePage() {
                 onChange={(evt) => setGame({ ...game, title: evt.target.value })}
                 required >
                 <option value="">--Select Game--</option>
-                {!fetching ? gamesList.map((game) => (
+                {!fetching ? gamesList.map((game: any) => (
                     <option key={game._id.toString()} value={game._id}> {game.title}
                     </option>)) : ""}
                 <option>Not Listed</option>
             </select>
             {newGame}
-            {newGame === "" ? "" : <>
+            {newGame === <></> ? "" : <>
                 <label htmlFor='category'>Category</label>
                 <select
                     className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'
@@ -180,7 +180,7 @@ export default function CreateGamePage() {
                     onChange={(evt) => setGame({ ...game, publisher: evt.target.value })}
                     required >
                     <option value="">--Select Publisher--</option>
-                    {!fetchPublisher ? publisherList.map((publisher) => (
+                    {!fetchPublisher ? publisherList.map((publisher: any) => (
                         <option key={publisher._id.toString()} value={publisher._id}> {publisher.name}
                         </option>)) : ""}
                     <option>Not Listed</option>

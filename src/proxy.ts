@@ -9,7 +9,7 @@ export async function proxy(request: NextRequest) {
 
     const token = request.cookies.get('token')?.value || ''
 
-    let decodedToken
+    let decodedToken: any
 
     if (token !== '') {
         try {
@@ -27,7 +27,7 @@ export async function proxy(request: NextRequest) {
     }
 
     if (path === '/profile' && token) {
-        return NextResponse.redirect(new URL(`/profile/${decodedToken.id}`, request.nextUrl))
+        return NextResponse.redirect(new URL(`/profile/${decodedToken!.id}`, request.nextUrl))
     }
 
     if (isPublicPath && token) {
