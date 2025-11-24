@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 export default function GameDetailsPage({ params }: any) {
     const router = useRouter()
-    const [data, setData] = React.useState({})
+    const [data, setData] = React.useState<any>({})
     const [loading, setLoading] = React.useState(true)
 
     const { gameId } = React.use<any>(params)
